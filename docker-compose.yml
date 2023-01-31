@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    # volumes:
+    #   - ./data/db:/data/db
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "8000:8000"
+  indexer:
+    build:
+      context: .
+      dockerfile: Dockerfile.indexer
+    ports:
+      - "5001:5001"
+    depends_on:
+      - db
+      - server
