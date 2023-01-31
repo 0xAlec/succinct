@@ -42,3 +42,5 @@ Note: I'm only mining/indexing 25 blocks here before shutting off so we can chec
 Error handling is not implemented for requests/database connection here but we would do so in production code. (I am familiar with Go-style error handling but not Python)
 
 There's also code commented out which can be used to test the behavior of the sync function.
+
+**I did not write any unit tests since most functionality that I want to test interacts with the database (not trivial to mock calls). In production we can write integration tests for specific behavior.**
