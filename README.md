@@ -37,6 +37,8 @@ I've added an endpoint in the server API to return the `BLOCK_MAPPING` object. I
 
 I've mocked the data computation but we can check from the output at the end that the data (message #) in the database for storing computation results matches the server's `BLOCK_MAPPING` and the database index, so we can be sure that it is re-org compatible and would have the correct data if we chose to perform 1 million iteration hashing like in the example.
 
-Note: I'm only mining/indexing 25 blocks here before shutting off, but in production we would keep the indexer on.
+Note: I'm only mining/indexing 25 blocks here before shutting off so we can check the contents, but in production we would keep the indexer on.
+
+Error handling is not implemented for requests/database connection here but we would do so in production code. (I am familiar with Go-style error handling but not Python)
 
 There's also code commented out which can be used to test the behavior of the sync function.
